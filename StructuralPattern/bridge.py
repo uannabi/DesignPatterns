@@ -1,16 +1,21 @@
 class DrawingAPIOne(object):
     """Implementation-specific abstraction: concrete class one"""
-    def draw_circle(self,x,y,radius):
-        print("Api 1 drawing a circle at ({}, {} with radisu {}!)".format(x,y, radius))
+
+    def draw_circle(self, x, y, radius):
+        print("Api 1 drawing a circle at ({}, {} with radisu {}!)".format(x, y, radius))
+
 
 class DrawingAPITwo(object):
     """Implementation-specific abstraction: concrete class two"""
-    def draw_circle(self,x,y,radius):
+
+    def draw_circle(self, x, y, radius):
         print("Api 1 drawing a circle at ({}, {} with radisu {}!)".format(x, y, radius))
+
 
 class Circle(object):
     """Implementation-independent abstraction: for example , there could be rectangle class"""
-    def __init__(self,x,y,radius, drawing_api):
+
+    def __init__(self, x, y, radius, drawing_api):
         """Initialize the necessary attribute"""
         self._x = x
         self._y = y
@@ -27,17 +32,14 @@ class Circle(object):
         self._radius *= percent
 
 
+# build the first cirlce object using API one
+circel = Circle(1, 2, 3, DrawingAPIOne())
 
-#build the first cirlce object using API one
-circel = Circle(1,2,3, DrawingAPIOne())
-
-#draw a circle
+# draw a circle
 circel.draw()
 
-#build the second circle object using two
-circel1 = Circle(2,3,4, DrawingAPITwo())
+# build the second circle object using two
+circel1 = Circle(2, 3, 4, DrawingAPITwo())
 
-#draw a circle
+# draw a circle
 circel1.draw()
-
-
