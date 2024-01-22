@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StructuralPattern package &mdash; Desing Pattern in Python 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="GangOfFour package" href="GangOfFour.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Desing Pattern in Python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DesignPatterns</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BehavioralPattern.html">BehavioralPattern package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CreationalPatterns.html">CreationalPatterns package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GangOfFour.html">GangOfFour package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">StructuralPattern package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-StructuralPattern.adapter">StructuralPattern.adapter module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.adapter.Adapter"><code class="docutils literal notranslate"><span class="pre">Adapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.adapter.British"><code class="docutils literal notranslate"><span class="pre">British</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.adapter.Korean"><code class="docutils literal notranslate"><span class="pre">Korean</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-StructuralPattern.bridge">StructuralPattern.bridge module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.bridge.Circle"><code class="docutils literal notranslate"><span class="pre">Circle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.bridge.DrawingAPIOne"><code class="docutils literal notranslate"><span class="pre">DrawingAPIOne</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.bridge.DrawingAPITwo"><code class="docutils literal notranslate"><span class="pre">DrawingAPITwo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-StructuralPattern.composit">StructuralPattern.composit module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.composit.Child"><code class="docutils literal notranslate"><span class="pre">Child</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.composit.Component"><code class="docutils literal notranslate"><span class="pre">Component</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.composit.Composite"><code class="docutils literal notranslate"><span class="pre">Composite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-StructuralPattern.decorator">StructuralPattern.decorator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.decorator.Espresso"><code class="docutils literal notranslate"><span class="pre">Espresso()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.decorator.MakeCoffee"><code class="docutils literal notranslate"><span class="pre">MakeCoffee()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-StructuralPattern.proxy">StructuralPattern.proxy module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.proxy.Producer"><code class="docutils literal notranslate"><span class="pre">Producer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#StructuralPattern.proxy.Proxy"><code class="docutils literal notranslate"><span class="pre">Proxy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-StructuralPattern">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Desing Pattern in Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DesignPatterns</a></li>
+      <li class="breadcrumb-item active">StructuralPattern package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/StructuralPattern.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="structuralpattern-package">
+<h1>StructuralPattern package<a class="headerlink" href="#structuralpattern-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-StructuralPattern.adapter">
+<span id="structuralpattern-adapter-module"></span><h2>StructuralPattern.adapter module<a class="headerlink" href="#module-StructuralPattern.adapter" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.adapter.Adapter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.adapter.</span></span><span class="sig-name descname"><span class="pre">Adapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">adapted_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/adapter.html#Adapter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.adapter.Adapter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>this change the generric method name to individualized another name</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.adapter.British">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.adapter.</span></span><span class="sig-name descname"><span class="pre">British</span></span><a class="reference internal" href="_modules/StructuralPattern/adapter.html#British"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.adapter.British" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>English speaker</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.adapter.British.speak_english">
+<span class="sig-name descname"><span class="pre">speak_english</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/adapter.html#British.speak_english"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.adapter.British.speak_english" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.adapter.Korean">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.adapter.</span></span><span class="sig-name descname"><span class="pre">Korean</span></span><a class="reference internal" href="_modules/StructuralPattern/adapter.html#Korean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.adapter.Korean" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>korean speaker</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.adapter.Korean.speak_korean">
+<span class="sig-name descname"><span class="pre">speak_korean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/adapter.html#Korean.speak_korean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.adapter.Korean.speak_korean" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-StructuralPattern.bridge">
+<span id="structuralpattern-bridge-module"></span><h2>StructuralPattern.bridge module<a class="headerlink" href="#module-StructuralPattern.bridge" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.bridge.Circle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.bridge.</span></span><span class="sig-name descname"><span class="pre">Circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drawing_api</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/bridge.html#Circle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.bridge.Circle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implementation-independent abstraction: for example , there could be rectangle class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.bridge.Circle.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/bridge.html#Circle.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.bridge.Circle.draw" title="Link to this definition"></a></dt>
+<dd><p>Implementation-specific abstraction taken care of by another class DrawingAPI</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.bridge.Circle.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/bridge.html#Circle.scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.bridge.Circle.scale" title="Link to this definition"></a></dt>
+<dd><p>Implementation-Independent</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.bridge.DrawingAPIOne">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.bridge.</span></span><span class="sig-name descname"><span class="pre">DrawingAPIOne</span></span><a class="reference internal" href="_modules/StructuralPattern/bridge.html#DrawingAPIOne"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.bridge.DrawingAPIOne" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implementation-specific abstraction: concrete class one</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.bridge.DrawingAPIOne.draw_circle">
+<span class="sig-name descname"><span class="pre">draw_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/bridge.html#DrawingAPIOne.draw_circle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.bridge.DrawingAPIOne.draw_circle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.bridge.DrawingAPITwo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.bridge.</span></span><span class="sig-name descname"><span class="pre">DrawingAPITwo</span></span><a class="reference internal" href="_modules/StructuralPattern/bridge.html#DrawingAPITwo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.bridge.DrawingAPITwo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implementation-specific abstraction: concrete class two</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.bridge.DrawingAPITwo.draw_circle">
+<span class="sig-name descname"><span class="pre">draw_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/bridge.html#DrawingAPITwo.draw_circle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.bridge.DrawingAPITwo.draw_circle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-StructuralPattern.composit">
+<span id="structuralpattern-composit-module"></span><h2>StructuralPattern.composit module<a class="headerlink" href="#module-StructuralPattern.composit" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Child">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.composit.</span></span><span class="sig-name descname"><span class="pre">Child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Child" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#StructuralPattern.composit.Component" title="StructuralPattern.composit.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">Component</span></code></a></p>
+<p>Concrete class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Child.component_function">
+<span class="sig-name descname"><span class="pre">component_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Child.component_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Child.component_function" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Component">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.composit.</span></span><span class="sig-name descname"><span class="pre">Component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Component"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Component" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Component.component_function">
+<span class="sig-name descname"><span class="pre">component_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Component.component_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Component.component_function" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Composite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.composit.</span></span><span class="sig-name descname"><span class="pre">Composite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Composite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Composite" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#StructuralPattern.composit.Component" title="StructuralPattern.composit.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">Component</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Composite.append_child">
+<span class="sig-name descname"><span class="pre">append_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Composite.append_child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Composite.append_child" title="Link to this definition"></a></dt>
+<dd><p>Method to add a new child item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Composite.component_function">
+<span class="sig-name descname"><span class="pre">component_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Composite.component_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Composite.component_function" title="Link to this definition"></a></dt>
+<dd><p>Print the name of composite object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.composit.Composite.remove_child">
+<span class="sig-name descname"><span class="pre">remove_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/composit.html#Composite.remove_child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.composit.Composite.remove_child" title="Link to this definition"></a></dt>
+<dd><p>Method to remove a child item</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-StructuralPattern.decorator">
+<span id="structuralpattern-decorator-module"></span><h2>StructuralPattern.decorator module<a class="headerlink" href="#module-StructuralPattern.decorator" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="StructuralPattern.decorator.Espresso">
+<span class="sig-prename descclassname"><span class="pre">StructuralPattern.decorator.</span></span><span class="sig-name descname"><span class="pre">Espresso</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/decorator.html#Espresso"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.decorator.Espresso" title="Link to this definition"></a></dt>
+<dd><p>Original function !</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="StructuralPattern.decorator.MakeCoffee">
+<span class="sig-prename descclassname"><span class="pre">StructuralPattern.decorator.</span></span><span class="sig-name descname"><span class="pre">MakeCoffee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/decorator.html#MakeCoffee"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.decorator.MakeCoffee" title="Link to this definition"></a></dt>
+<dd><p>Defines the decorator</p>
+</dd></dl>
+
+</section>
+<section id="module-StructuralPattern.proxy">
+<span id="structuralpattern-proxy-module"></span><h2>StructuralPattern.proxy module<a class="headerlink" href="#module-StructuralPattern.proxy" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.proxy.Producer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.proxy.</span></span><span class="sig-name descname"><span class="pre">Producer</span></span><a class="reference internal" href="_modules/StructuralPattern/proxy.html#Producer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.proxy.Producer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Define the ‘resource-intensive’ Object to instantiate</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.proxy.Producer.meet">
+<span class="sig-name descname"><span class="pre">meet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/proxy.html#Producer.meet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.proxy.Producer.meet" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.proxy.Producer.producer">
+<span class="sig-name descname"><span class="pre">producer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/proxy.html#Producer.producer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.proxy.Producer.producer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="StructuralPattern.proxy.Proxy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">StructuralPattern.proxy.</span></span><span class="sig-name descname"><span class="pre">Proxy</span></span><a class="reference internal" href="_modules/StructuralPattern/proxy.html#Proxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.proxy.Proxy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Define the ‘relatively less resource intensive’ proxy to instantiate as middleman</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="StructuralPattern.proxy.Proxy.produce">
+<span class="sig-name descname"><span class="pre">produce</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/StructuralPattern/proxy.html#Proxy.produce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#StructuralPattern.proxy.Proxy.produce" title="Link to this definition"></a></dt>
+<dd><p>Check if the Team Lead is available</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-StructuralPattern">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-StructuralPattern" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="GangOfFour.html" class="btn btn-neutral float-left" title="GangOfFour package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Zahid Un Nabi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

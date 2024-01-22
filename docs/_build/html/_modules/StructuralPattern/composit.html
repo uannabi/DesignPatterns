@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StructuralPattern.composit &mdash; Desing Pattern in Python 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Desing Pattern in Python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">DesignPatterns</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Desing Pattern in Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">StructuralPattern.composit</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for StructuralPattern.composit</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Component">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Component">[docs]</a>
+<span></span><span class="k">class</span> <span class="nc">Component</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Abstract class&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="Component.component_function">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Component.component_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">component_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Child">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Child">[docs]</a>
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>  <span class="c1"># Inherits from the abstract class, Component</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Concrete class&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">Component</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># this is where we store the name of y0our child item!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Child.component_function">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Child.component_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">component_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># print the name of your child item here</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Composite">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Composite">[docs]</a>
+<span class="k">class</span> <span class="nc">Composite</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>  <span class="c1"># Inherits from the abstract class, Component</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">Component</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># this is where we store the name of the composite object</span>
+
+        <span class="c1"># this is where we keep our child items</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="Composite.append_child">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Composite.append_child">[docs]</a>
+    <span class="k">def</span> <span class="nf">append_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to add a new child item&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Composite.remove_child">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Composite.remove_child">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to remove a child item&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">child</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Composite.component_function">
+<a class="viewcode-back" href="../../StructuralPattern.html#StructuralPattern.composit.Composite.component_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">component_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print the name of composite object&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="c1"># iterrate through the chuld objects and invoke their component function printing their name</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="n">i</span><span class="o">.</span><span class="n">component_function</span><span class="p">()</span></div>
+</div>
+
+
+
+<span class="c1"># build composit sub menu</span>
+<span class="n">sub1</span> <span class="o">=</span> <span class="n">Composite</span><span class="p">(</span><span class="s2">&quot;submenu1&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a new child sub_submenu 11</span>
+<span class="n">sub11</span> <span class="o">=</span> <span class="n">Child</span><span class="p">(</span><span class="s2">&quot;sub_submenu 11&quot;</span><span class="p">)</span>
+<span class="c1"># create a new child sub_submenu 12</span>
+<span class="n">sub12</span> <span class="o">=</span> <span class="n">Child</span><span class="p">(</span><span class="s2">&quot;sub_submenu 12&quot;</span><span class="p">)</span>
+
+<span class="c1"># add the sub_submenu 11 to submenu 1</span>
+<span class="n">sub1</span><span class="o">.</span><span class="n">append_child</span><span class="p">(</span><span class="n">sub11</span><span class="p">)</span>
+<span class="c1"># add teh sub_submenu 12 to submenu 1</span>
+<span class="n">sub1</span><span class="o">.</span><span class="n">append_child</span><span class="p">(</span><span class="n">sub12</span><span class="p">)</span>
+
+<span class="c1"># build a top level composite menu</span>
+
+<span class="n">top</span> <span class="o">=</span> <span class="n">Composite</span><span class="p">(</span><span class="s2">&quot;Top_menu&quot;</span><span class="p">)</span>
+
+<span class="c1"># build a submenu 2 that is not a composite</span>
+
+<span class="n">sub2</span> <span class="o">=</span> <span class="n">Child</span><span class="p">(</span><span class="s2">&quot;Submenu2&quot;</span><span class="p">)</span>
+
+<span class="c1"># add the composite submenu 1 to the top-level  composite menu</span>
+<span class="n">top</span><span class="o">.</span><span class="n">append_child</span><span class="p">(</span><span class="n">sub1</span><span class="p">)</span>
+
+<span class="c1"># add the plain submenu 2 the top.level composite menu</span>
+<span class="n">top</span><span class="o">.</span><span class="n">append_child</span><span class="p">(</span><span class="n">sub2</span><span class="p">)</span>
+
+<span class="c1">#lets test composit pattern</span>
+<span class="n">top</span><span class="o">.</span><span class="n">component_function</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Zahid Un Nabi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GangOfFour package &mdash; Desing Pattern in Python 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="StructuralPattern package" href="StructuralPattern.html" />
+    <link rel="prev" title="CreationalPatterns package" href="CreationalPatterns.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Desing Pattern in Python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DesignPatterns</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BehavioralPattern.html">BehavioralPattern package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CreationalPatterns.html">CreationalPatterns package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GangOfFour package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour.command">GangOfFour.command module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.command.Command"><code class="docutils literal notranslate"><span class="pre">Command</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.command.Copy"><code class="docutils literal notranslate"><span class="pre">Copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.command.Macro"><code class="docutils literal notranslate"><span class="pre">Macro</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.command.Paste"><code class="docutils literal notranslate"><span class="pre">Paste</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.command.Save"><code class="docutils literal notranslate"><span class="pre">Save</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.command.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour.facade">GangOfFour.facade module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.facade.Facade"><code class="docutils literal notranslate"><span class="pre">Facade</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.facade.SubsystemA"><code class="docutils literal notranslate"><span class="pre">SubsystemA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.facade.SubsystemB"><code class="docutils literal notranslate"><span class="pre">SubsystemB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.facade.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour.interpreter">GangOfFour.interpreter module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.interpreter.AbstractExpression"><code class="docutils literal notranslate"><span class="pre">AbstractExpression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.interpreter.NonterminalExpression"><code class="docutils literal notranslate"><span class="pre">NonterminalExpression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.interpreter.TerminalExpression"><code class="docutils literal notranslate"><span class="pre">TerminalExpression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.interpreter.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour.mediator">GangOfFour.mediator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.mediator.Colleague"><code class="docutils literal notranslate"><span class="pre">Colleague</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.mediator.ConcreteColleague"><code class="docutils literal notranslate"><span class="pre">ConcreteColleague</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.mediator.ConcreteMediator"><code class="docutils literal notranslate"><span class="pre">ConcreteMediator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.mediator.Mediator"><code class="docutils literal notranslate"><span class="pre">Mediator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.mediator.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour.momento">GangOfFour.momento module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.momento.Originator"><code class="docutils literal notranslate"><span class="pre">Originator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.momento.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour.state">GangOfFour.state module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.state.ATM"><code class="docutils literal notranslate"><span class="pre">ATM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.state.AtmState"><code class="docutils literal notranslate"><span class="pre">AtmState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.state.Off"><code class="docutils literal notranslate"><span class="pre">Off</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.state.On"><code class="docutils literal notranslate"><span class="pre">On</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.state.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour.template">GangOfFour.template module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.template.AbstractClass"><code class="docutils literal notranslate"><span class="pre">AbstractClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.template.ConcreteClassA"><code class="docutils literal notranslate"><span class="pre">ConcreteClassA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.template.ConcreteClassB"><code class="docutils literal notranslate"><span class="pre">ConcreteClassB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GangOfFour.template.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GangOfFour">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="StructuralPattern.html">StructuralPattern package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Desing Pattern in Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DesignPatterns</a></li>
+      <li class="breadcrumb-item active">GangOfFour package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/GangOfFour.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gangoffour-package">
+<h1>GangOfFour package<a class="headerlink" href="#gangoffour-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-GangOfFour.command">
+<span id="gangoffour-command-module"></span><h2>GangOfFour.command module<a class="headerlink" href="#module-GangOfFour.command" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.command.Command">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.command.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><a class="reference internal" href="_modules/GangOfFour/command.html#Command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Command" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.command.Command.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/command.html#Command.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Command.execute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.command.Copy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.command.</span></span><span class="sig-name descname"><span class="pre">Copy</span></span><a class="reference internal" href="_modules/GangOfFour/command.html#Copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Copy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.command.Command" title="GangOfFour.command.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.command.Copy.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/command.html#Copy.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Copy.execute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.command.Macro">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.command.</span></span><span class="sig-name descname"><span class="pre">Macro</span></span><a class="reference internal" href="_modules/GangOfFour/command.html#Macro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Macro" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.command.Macro.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/command.html#Macro.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Macro.add" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.command.Macro.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/command.html#Macro.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Macro.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.command.Paste">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.command.</span></span><span class="sig-name descname"><span class="pre">Paste</span></span><a class="reference internal" href="_modules/GangOfFour/command.html#Paste"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Paste" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.command.Command" title="GangOfFour.command.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.command.Paste.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/command.html#Paste.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Paste.execute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.command.Save">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.command.</span></span><span class="sig-name descname"><span class="pre">Save</span></span><a class="reference internal" href="_modules/GangOfFour/command.html#Save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Save" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.command.Command" title="GangOfFour.command.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.command.Save.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/command.html#Save.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.Save.execute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GangOfFour.command.main">
+<span class="sig-prename descclassname"><span class="pre">GangOfFour.command.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/command.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.command.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-GangOfFour.facade">
+<span id="gangoffour-facade-module"></span><h2>GangOfFour.facade module<a class="headerlink" href="#module-GangOfFour.facade" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.facade.Facade">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.facade.</span></span><span class="sig-name descname"><span class="pre">Facade</span></span><a class="reference internal" href="_modules/GangOfFour/facade.html#Facade"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.Facade" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.facade.Facade.method">
+<span class="sig-name descname"><span class="pre">method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/facade.html#Facade.method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.Facade.method" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.facade.SubsystemA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.facade.</span></span><span class="sig-name descname"><span class="pre">SubsystemA</span></span><a class="reference internal" href="_modules/GangOfFour/facade.html#SubsystemA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.SubsystemA" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.facade.SubsystemA.method1">
+<span class="sig-name descname"><span class="pre">method1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/facade.html#SubsystemA.method1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.SubsystemA.method1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.facade.SubsystemA.method2">
+<span class="sig-name descname"><span class="pre">method2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/facade.html#SubsystemA.method2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.SubsystemA.method2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.facade.SubsystemB">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.facade.</span></span><span class="sig-name descname"><span class="pre">SubsystemB</span></span><a class="reference internal" href="_modules/GangOfFour/facade.html#SubsystemB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.SubsystemB" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.facade.SubsystemB.method1">
+<span class="sig-name descname"><span class="pre">method1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/facade.html#SubsystemB.method1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.SubsystemB.method1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.facade.SubsystemB.method2">
+<span class="sig-name descname"><span class="pre">method2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/facade.html#SubsystemB.method2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.SubsystemB.method2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GangOfFour.facade.main">
+<span class="sig-prename descclassname"><span class="pre">GangOfFour.facade.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/facade.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.facade.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-GangOfFour.interpreter">
+<span id="gangoffour-interpreter-module"></span><h2>GangOfFour.interpreter module<a class="headerlink" href="#module-GangOfFour.interpreter" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.interpreter.AbstractExpression">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.interpreter.</span></span><span class="sig-name descname"><span class="pre">AbstractExpression</span></span><a class="reference internal" href="_modules/GangOfFour/interpreter.html#AbstractExpression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.interpreter.AbstractExpression" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.interpreter.AbstractExpression.interpret">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">interpret</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/interpreter.html#AbstractExpression.interpret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.interpreter.AbstractExpression.interpret" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.interpreter.NonterminalExpression">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.interpreter.</span></span><span class="sig-name descname"><span class="pre">NonterminalExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/interpreter.html#NonterminalExpression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.interpreter.NonterminalExpression" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.interpreter.AbstractExpression" title="GangOfFour.interpreter.AbstractExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractExpression</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.interpreter.NonterminalExpression.interpret">
+<span class="sig-name descname"><span class="pre">interpret</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/interpreter.html#NonterminalExpression.interpret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.interpreter.NonterminalExpression.interpret" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.interpreter.TerminalExpression">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.interpreter.</span></span><span class="sig-name descname"><span class="pre">TerminalExpression</span></span><a class="reference internal" href="_modules/GangOfFour/interpreter.html#TerminalExpression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.interpreter.TerminalExpression" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.interpreter.AbstractExpression" title="GangOfFour.interpreter.AbstractExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractExpression</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.interpreter.TerminalExpression.interpret">
+<span class="sig-name descname"><span class="pre">interpret</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/interpreter.html#TerminalExpression.interpret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.interpreter.TerminalExpression.interpret" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GangOfFour.interpreter.main">
+<span class="sig-prename descclassname"><span class="pre">GangOfFour.interpreter.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/interpreter.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.interpreter.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-GangOfFour.mediator">
+<span id="gangoffour-mediator-module"></span><h2>GangOfFour.mediator module<a class="headerlink" href="#module-GangOfFour.mediator" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.mediator.Colleague">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.mediator.</span></span><span class="sig-name descname"><span class="pre">Colleague</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#Colleague"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.Colleague" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.Colleague.getID">
+<span class="sig-name descname"><span class="pre">getID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#Colleague.getID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.Colleague.getID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.Colleague.receive">
+<span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#Colleague.receive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.Colleague.receive" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.Colleague.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#Colleague.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.Colleague.send" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.mediator.ConcreteColleague">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.mediator.</span></span><span class="sig-name descname"><span class="pre">ConcreteColleague</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mediator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#ConcreteColleague"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.ConcreteColleague" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.mediator.Colleague" title="GangOfFour.mediator.Colleague"><code class="xref py py-class docutils literal notranslate"><span class="pre">Colleague</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.ConcreteColleague.receive">
+<span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#ConcreteColleague.receive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.ConcreteColleague.receive" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.ConcreteColleague.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#ConcreteColleague.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.ConcreteColleague.send" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.mediator.ConcreteMediator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.mediator.</span></span><span class="sig-name descname"><span class="pre">ConcreteMediator</span></span><a class="reference internal" href="_modules/GangOfFour/mediator.html#ConcreteMediator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.ConcreteMediator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.mediator.Mediator" title="GangOfFour.mediator.Mediator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mediator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.ConcreteMediator.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colleague</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#ConcreteMediator.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.ConcreteMediator.add" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.ConcreteMediator.distribute">
+<span class="sig-name descname"><span class="pre">distribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#ConcreteMediator.distribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.ConcreteMediator.distribute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.mediator.Mediator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.mediator.</span></span><span class="sig-name descname"><span class="pre">Mediator</span></span><a class="reference internal" href="_modules/GangOfFour/mediator.html#Mediator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.Mediator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.Mediator.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colleague</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#Mediator.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.Mediator.add" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.mediator.Mediator.distribute">
+<span class="sig-name descname"><span class="pre">distribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#Mediator.distribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.Mediator.distribute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GangOfFour.mediator.main">
+<span class="sig-prename descclassname"><span class="pre">GangOfFour.mediator.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/mediator.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.mediator.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-GangOfFour.momento">
+<span id="gangoffour-momento-module"></span><h2>GangOfFour.momento module<a class="headerlink" href="#module-GangOfFour.momento" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.momento.Originator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.momento.</span></span><span class="sig-name descname"><span class="pre">Originator</span></span><a class="reference internal" href="_modules/GangOfFour/momento.html#Originator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.momento.Originator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.momento.Originator.create_memento">
+<span class="sig-name descname"><span class="pre">create_memento</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/momento.html#Originator.create_memento"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.momento.Originator.create_memento" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.momento.Originator.set_memento">
+<span class="sig-name descname"><span class="pre">set_memento</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memento</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/momento.html#Originator.set_memento"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.momento.Originator.set_memento" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GangOfFour.momento.main">
+<span class="sig-prename descclassname"><span class="pre">GangOfFour.momento.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/momento.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.momento.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-GangOfFour.state">
+<span id="gangoffour-state-module"></span><h2>GangOfFour.state module<a class="headerlink" href="#module-GangOfFour.state" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.state.ATM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.state.</span></span><span class="sig-name descname"><span class="pre">ATM</span></span><a class="reference internal" href="_modules/GangOfFour/state.html#ATM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.state.ATM" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.state.ATM.setState">
+<span class="sig-name descname"><span class="pre">setState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/state.html#ATM.setState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.state.ATM.setState" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.state.AtmState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.state.</span></span><span class="sig-name descname"><span class="pre">AtmState</span></span><a class="reference internal" href="_modules/GangOfFour/state.html#AtmState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.state.AtmState" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GangOfFour.state.AtmState.allowed">
+<span class="sig-name descname"><span class="pre">allowed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#GangOfFour.state.AtmState.allowed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.state.AtmState.goNext">
+<span class="sig-name descname"><span class="pre">goNext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/state.html#AtmState.goNext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.state.AtmState.goNext" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GangOfFour.state.AtmState.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'state'</span></em><a class="headerlink" href="#GangOfFour.state.AtmState.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.state.Off">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.state.</span></span><span class="sig-name descname"><span class="pre">Off</span></span><a class="reference internal" href="_modules/GangOfFour/state.html#Off"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.state.Off" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.state.AtmState" title="GangOfFour.state.AtmState"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtmState</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GangOfFour.state.Off.allowed">
+<span class="sig-name descname"><span class="pre">allowed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['on']</span></em><a class="headerlink" href="#GangOfFour.state.Off.allowed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GangOfFour.state.Off.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'off'</span></em><a class="headerlink" href="#GangOfFour.state.Off.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.state.On">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.state.</span></span><span class="sig-name descname"><span class="pre">On</span></span><a class="reference internal" href="_modules/GangOfFour/state.html#On"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.state.On" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.state.AtmState" title="GangOfFour.state.AtmState"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtmState</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GangOfFour.state.On.allowed">
+<span class="sig-name descname"><span class="pre">allowed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['off']</span></em><a class="headerlink" href="#GangOfFour.state.On.allowed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GangOfFour.state.On.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'on'</span></em><a class="headerlink" href="#GangOfFour.state.On.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GangOfFour.state.main">
+<span class="sig-prename descclassname"><span class="pre">GangOfFour.state.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/state.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.state.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-GangOfFour.template">
+<span id="gangoffour-template-module"></span><h2>GangOfFour.template module<a class="headerlink" href="#module-GangOfFour.template" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.template.AbstractClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.template.</span></span><span class="sig-name descname"><span class="pre">AbstractClass</span></span><a class="reference internal" href="_modules/GangOfFour/template.html#AbstractClass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.AbstractClass" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.AbstractClass.do_step_1">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_step_1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#AbstractClass.do_step_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.AbstractClass.do_step_1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.AbstractClass.do_step_2">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_step_2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#AbstractClass.do_step_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.AbstractClass.do_step_2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.AbstractClass.do_this_or">
+<span class="sig-name descname"><span class="pre">do_this_or</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#AbstractClass.do_this_or"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.AbstractClass.do_this_or" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.AbstractClass.template_method">
+<span class="sig-name descname"><span class="pre">template_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#AbstractClass.template_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.AbstractClass.template_method" title="Link to this definition"></a></dt>
+<dd><p>Ths is the template method that contains a collection of
+methods to stay the same, to be overriden, and to be overriden optionally.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.template.ConcreteClassA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.template.</span></span><span class="sig-name descname"><span class="pre">ConcreteClassA</span></span><a class="reference internal" href="_modules/GangOfFour/template.html#ConcreteClassA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.ConcreteClassA" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.template.AbstractClass" title="GangOfFour.template.AbstractClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractClass</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.ConcreteClassA.do_step_1">
+<span class="sig-name descname"><span class="pre">do_step_1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#ConcreteClassA.do_step_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.ConcreteClassA.do_step_1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.ConcreteClassA.do_step_2">
+<span class="sig-name descname"><span class="pre">do_step_2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#ConcreteClassA.do_step_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.ConcreteClassA.do_step_2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GangOfFour.template.ConcreteClassB">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GangOfFour.template.</span></span><span class="sig-name descname"><span class="pre">ConcreteClassB</span></span><a class="reference internal" href="_modules/GangOfFour/template.html#ConcreteClassB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.ConcreteClassB" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#GangOfFour.template.AbstractClass" title="GangOfFour.template.AbstractClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractClass</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.ConcreteClassB.do_step_1">
+<span class="sig-name descname"><span class="pre">do_step_1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#ConcreteClassB.do_step_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.ConcreteClassB.do_step_1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.ConcreteClassB.do_step_2">
+<span class="sig-name descname"><span class="pre">do_step_2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#ConcreteClassB.do_step_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.ConcreteClassB.do_step_2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GangOfFour.template.ConcreteClassB.do_this_or">
+<span class="sig-name descname"><span class="pre">do_this_or</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#ConcreteClassB.do_this_or"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.ConcreteClassB.do_this_or" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GangOfFour.template.main">
+<span class="sig-prename descclassname"><span class="pre">GangOfFour.template.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GangOfFour/template.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GangOfFour.template.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-GangOfFour">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-GangOfFour" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CreationalPatterns.html" class="btn btn-neutral float-left" title="CreationalPatterns package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="StructuralPattern.html" class="btn btn-neutral float-right" title="StructuralPattern package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Zahid Un Nabi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

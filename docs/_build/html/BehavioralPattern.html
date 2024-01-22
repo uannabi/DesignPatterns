@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BehavioralPattern package &mdash; Desing Pattern in Python 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CreationalPatterns package" href="CreationalPatterns.html" />
+    <link rel="prev" title="DesignPatterns" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Desing Pattern in Python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DesignPatterns</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BehavioralPattern package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BehavioralPattern.chain">BehavioralPattern.chain module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.chain.Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.chain.ConcreateHandler1"><code class="docutils literal notranslate"><span class="pre">ConcreateHandler1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.chain.DefaultHandler"><code class="docutils literal notranslate"><span class="pre">DefaultHandler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.chain.Handler"><code class="docutils literal notranslate"><span class="pre">Handler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#behavioralpattern-conf-module">BehavioralPattern.conf module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BehavioralPattern.iterator">BehavioralPattern.iterator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.iterator.count_to"><code class="docutils literal notranslate"><span class="pre">count_to()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BehavioralPattern.observer">BehavioralPattern.observer module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.observer.Core"><code class="docutils literal notranslate"><span class="pre">Core</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.observer.Subject"><code class="docutils literal notranslate"><span class="pre">Subject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.observer.TempViewr"><code class="docutils literal notranslate"><span class="pre">TempViewr</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BehavioralPattern.strategy">BehavioralPattern.strategy module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.strategy.Strategy"><code class="docutils literal notranslate"><span class="pre">Strategy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.strategy.strategy_one"><code class="docutils literal notranslate"><span class="pre">strategy_one()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.strategy.strategy_two"><code class="docutils literal notranslate"><span class="pre">strategy_two()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BehavioralPattern.visitor">BehavioralPattern.visitor module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.visitor.Electrcian"><code class="docutils literal notranslate"><span class="pre">Electrcian</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.visitor.HavcSpecialist"><code class="docutils literal notranslate"><span class="pre">HavcSpecialist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.visitor.House"><code class="docutils literal notranslate"><span class="pre">House</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.visitor.Visitor"><code class="docutils literal notranslate"><span class="pre">Visitor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.visitor.e"><code class="docutils literal notranslate"><span class="pre">e</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.visitor.home"><code class="docutils literal notranslate"><span class="pre">home</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BehavioralPattern.visitor.hv"><code class="docutils literal notranslate"><span class="pre">hv</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BehavioralPattern">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CreationalPatterns.html">CreationalPatterns package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GangOfFour.html">GangOfFour package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StructuralPattern.html">StructuralPattern package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Desing Pattern in Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DesignPatterns</a></li>
+      <li class="breadcrumb-item active">BehavioralPattern package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/BehavioralPattern.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="behavioralpattern-package">
+<h1>BehavioralPattern package<a class="headerlink" href="#behavioralpattern-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-BehavioralPattern.chain">
+<span id="behavioralpattern-chain-module"></span><h2>BehavioralPattern.chain module<a class="headerlink" href="#module-BehavioralPattern.chain" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.chain.Client">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.chain.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><a class="reference internal" href="_modules/BehavioralPattern/chain.html#Client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.chain.Client" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.chain.Client.delegate">
+<span class="sig-name descname"><span class="pre">delegate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">requests</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/chain.html#Client.delegate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.chain.Client.delegate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.chain.ConcreateHandler1">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.chain.</span></span><span class="sig-name descname"><span class="pre">ConcreateHandler1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">successor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/chain.html#ConcreateHandler1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.chain.ConcreateHandler1" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#BehavioralPattern.chain.Handler" title="BehavioralPattern.chain.Handler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Handler</span></code></a></p>
+<p>Concrete handler 1</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.chain.DefaultHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.chain.</span></span><span class="sig-name descname"><span class="pre">DefaultHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">successor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/chain.html#DefaultHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.chain.DefaultHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#BehavioralPattern.chain.Handler" title="BehavioralPattern.chain.Handler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Handler</span></code></a></p>
+<p>Default handler</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.chain.Handler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.chain.</span></span><span class="sig-name descname"><span class="pre">Handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">successor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/chain.html#Handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.chain.Handler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>abstract handeler</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.chain.Handler.handler">
+<span class="sig-name descname"><span class="pre">handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/chain.html#Handler.handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.chain.Handler.handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="behavioralpattern-conf-module">
+<h2>BehavioralPattern.conf module<a class="headerlink" href="#behavioralpattern-conf-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-BehavioralPattern.iterator">
+<span id="behavioralpattern-iterator-module"></span><h2>BehavioralPattern.iterator module<a class="headerlink" href="#module-BehavioralPattern.iterator" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="BehavioralPattern.iterator.count_to">
+<span class="sig-prename descclassname"><span class="pre">BehavioralPattern.iterator.</span></span><span class="sig-name descname"><span class="pre">count_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/iterator.html#count_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.iterator.count_to" title="Link to this definition"></a></dt>
+<dd><p>our iterator implementation</p>
+</dd></dl>
+
+</section>
+<section id="module-BehavioralPattern.observer">
+<span id="behavioralpattern-observer-module"></span><h2>BehavioralPattern.observer module<a class="headerlink" href="#module-BehavioralPattern.observer" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.Core">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.observer.</span></span><span class="sig-name descname"><span class="pre">Core</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/observer.html#Core"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.observer.Core" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#BehavioralPattern.observer.Subject" title="BehavioralPattern.observer.Subject"><code class="xref py py-class docutils literal notranslate"><span class="pre">Subject</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.Core.temp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temp</span></span><a class="headerlink" href="#BehavioralPattern.observer.Core.temp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.Subject">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.observer.</span></span><span class="sig-name descname"><span class="pre">Subject</span></span><a class="reference internal" href="_modules/BehavioralPattern/observer.html#Subject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.observer.Subject" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.Subject.attach">
+<span class="sig-name descname"><span class="pre">attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/observer.html#Subject.attach"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.observer.Subject.attach" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.Subject.detach">
+<span class="sig-name descname"><span class="pre">detach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/observer.html#Subject.detach"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.observer.Subject.detach" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.Subject.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modifier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/observer.html#Subject.notify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.observer.Subject.notify" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.TempViewr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.observer.</span></span><span class="sig-name descname"><span class="pre">TempViewr</span></span><a class="reference internal" href="_modules/BehavioralPattern/observer.html#TempViewr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.observer.TempViewr" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.observer.TempViewr.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/observer.html#TempViewr.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.observer.TempViewr.update" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-BehavioralPattern.strategy">
+<span id="behavioralpattern-strategy-module"></span><h2>BehavioralPattern.strategy module<a class="headerlink" href="#module-BehavioralPattern.strategy" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.strategy.Strategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.strategy.</span></span><span class="sig-name descname"><span class="pre">Strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/strategy.html#Strategy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.strategy.Strategy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The strategy pattern class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.strategy.Strategy.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/strategy.html#Strategy.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.strategy.Strategy.execute" title="Link to this definition"></a></dt>
+<dd><p>the default method that printes the name of the strategy being used</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BehavioralPattern.strategy.strategy_one">
+<span class="sig-prename descclassname"><span class="pre">BehavioralPattern.strategy.</span></span><span class="sig-name descname"><span class="pre">strategy_one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/strategy.html#strategy_one"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.strategy.strategy_one" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BehavioralPattern.strategy.strategy_two">
+<span class="sig-prename descclassname"><span class="pre">BehavioralPattern.strategy.</span></span><span class="sig-name descname"><span class="pre">strategy_two</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/strategy.html#strategy_two"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.strategy.strategy_two" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-BehavioralPattern.visitor">
+<span id="behavioralpattern-visitor-module"></span><h2>BehavioralPattern.visitor module<a class="headerlink" href="#module-BehavioralPattern.visitor" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.Electrcian">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.visitor.</span></span><span class="sig-name descname"><span class="pre">Electrcian</span></span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#Electrcian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.Electrcian" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#BehavioralPattern.visitor.Visitor" title="BehavioralPattern.visitor.Visitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Visitor</span></code></a></p>
+<p>Concrete visitor: electrician</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.Electrcian.visit">
+<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">house</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#Electrcian.visit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.Electrcian.visit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.HavcSpecialist">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.visitor.</span></span><span class="sig-name descname"><span class="pre">HavcSpecialist</span></span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#HavcSpecialist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.HavcSpecialist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#BehavioralPattern.visitor.Visitor" title="BehavioralPattern.visitor.Visitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Visitor</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.HavcSpecialist.visit">
+<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">house</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#HavcSpecialist.visit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.HavcSpecialist.visit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.House">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.visitor.</span></span><span class="sig-name descname"><span class="pre">House</span></span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#House"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.House" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.House.accept">
+<span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visitor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#House.accept"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.House.accept" title="Link to this definition"></a></dt>
+<dd><p>Interface a accept a visitor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.House.work_on_electricity">
+<span class="sig-name descname"><span class="pre">work_on_electricity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eleactracian</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#House.work_on_electricity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.House.work_on_electricity" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.House.work_on_hvac">
+<span class="sig-name descname"><span class="pre">work_on_hvac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hvac_specialist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#House.work_on_hvac"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.House.work_on_hvac" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.Visitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BehavioralPattern.visitor.</span></span><span class="sig-name descname"><span class="pre">Visitor</span></span><a class="reference internal" href="_modules/BehavioralPattern/visitor.html#Visitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BehavioralPattern.visitor.Visitor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstracdt visitor</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.e">
+<span class="sig-prename descclassname"><span class="pre">BehavioralPattern.visitor.</span></span><span class="sig-name descname"><span class="pre">e</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;BehavioralPattern.visitor.Electrcian</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#BehavioralPattern.visitor.e" title="Link to this definition"></a></dt>
+<dd><p>Create a house</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.home">
+<span class="sig-prename descclassname"><span class="pre">BehavioralPattern.visitor.</span></span><span class="sig-name descname"><span class="pre">home</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;BehavioralPattern.visitor.House</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#BehavioralPattern.visitor.home" title="Link to this definition"></a></dt>
+<dd><p>Let the house accept the HVAC specilist and work on the house by invoking the visit() method</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="BehavioralPattern.visitor.hv">
+<span class="sig-prename descclassname"><span class="pre">BehavioralPattern.visitor.</span></span><span class="sig-name descname"><span class="pre">hv</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;BehavioralPattern.visitor.HavcSpecialist</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#BehavioralPattern.visitor.hv" title="Link to this definition"></a></dt>
+<dd><p>create an electician</p>
+</dd></dl>
+
+</section>
+<section id="module-BehavioralPattern">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-BehavioralPattern" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="DesignPatterns" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CreationalPatterns.html" class="btn btn-neutral float-right" title="CreationalPatterns package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Zahid Un Nabi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
